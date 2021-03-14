@@ -1,0 +1,88 @@
+Cloning "https://github.com/frfavoreto/DO288-apps" ...
+	Commit:	20d773370efdfce3221f56348ba2c544558a58a3 (fix: Add a missing license file for the repository (#48))
+	Author:	Marek Czernek <mczernek@redhat.com>
+	Date:	Tue Jul 28 16:04:10 2020 +0200
+Caching blobs under "/var/cache/blobs".
+Getting image source signatures
+Copying blob sha256:a8d8a88bbf1f0800d17bbd5bf3d3d8de6d755ccabfd019abf042f9f1b6c88d19
+Copying blob sha256:0a2284aba01f1b65e6cf64dad35426b5c36d18c12a9006d958a134cec6fe8e9c
+Copying blob sha256:1f209e06e85d1c9a1b44b7a5b87360d7976245957624fcb9eededb7b5a8a0651
+Copying blob sha256:1255769d9dc0e834961b135c84a9e76c70b55c7176f8982192e579916737f7f4
+Copying blob sha256:15038f2f96bce3594a690ae501b9a380434face93ca0940d6a34ef5020f311f9
+Copying config sha256:e9b0166a71b2b88c57b76ea326e481f3746d952b608105ebce3d9d329e0374dc
+Writing manifest to image destination
+Storing signatures
+Generating dockerfile with builder image image-registry.openshift-image-registry.svc:5000/openshift/nodejs@sha256:1ab9834c333f4f57443e219a2fb2dcd8338bd200888b2c3cf626a047723f6616
+STEP 1: FROM image-registry.openshift-image-registry.svc:5000/openshift/nodejs@sha256:1ab9834c333f4f57443e219a2fb2dcd8338bd200888b2c3cf626a047723f6616
+STEP 2: LABEL "io.openshift.build.commit.message"="fix: Add a missing license file for the repository (#48)"       "io.openshift.build.source-location"="https://github.com/frfavoreto/DO288-apps"       "io.openshift.build.source-context-dir"="probes"       "io.openshift.build.image"="image-registry.openshift-image-registry.svc:5000/openshift/nodejs@sha256:1ab9834c333f4f57443e219a2fb2dcd8338bd200888b2c3cf626a047723f6616"       "io.openshift.build.commit.author"="Marek Czernek <mczernek@redhat.com>"       "io.openshift.build.commit.date"="Tue Jul 28 16:04:10 2020 +0200"       "io.openshift.build.commit.id"="20d773370efdfce3221f56348ba2c544558a58a3"       "io.openshift.build.commit.ref"="master"
+STEP 3: ENV OPENSHIFT_BUILD_NAME="probes-1"     OPENSHIFT_BUILD_NAMESPACE="steve-hillyer-probes"     OPENSHIFT_BUILD_SOURCE="https://github.com/frfavoreto/DO288-apps"     OPENSHIFT_BUILD_COMMIT="20d773370efdfce3221f56348ba2c544558a58a3"     npm_config_registry="http://nexus-common.apps.na45.prod.nextcle.com/repository/nodejs"
+STEP 4: USER root
+STEP 5: COPY upload/src /tmp/src
+STEP 6: RUN chown -R 1001:0 /tmp/src
+STEP 7: USER 1001
+STEP 8: RUN /usr/libexec/s2i/assemble
+---> Installing application source ...
+---> Installing all dependencies
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN probes@1.0.0 No repository field.
+npm WARN probes@1.0.0 license should be a valid SPDX license expression
+
+added 43 packages from 27 contributors in 1.235s
+---> Building in production mode
+---> Pruning the development dependencies
+npm WARN probes@1.0.0 No repository field.
+npm WARN probes@1.0.0 license should be a valid SPDX license expression
+
+up to date in 0.218s
+/opt/app-root/src/.npm is not a mountpoint
+---> Cleaning the npm cache /opt/app-root/src/.npm
+/tmp is not a mountpoint
+---> Cleaning the /tmp/npm-*
+STEP 9: CMD /usr/libexec/s2i/run
+STEP 10: COMMIT temp.builder.openshift.io/steve-hillyer-probes/probes-1:261f2be0
+Getting image source signatures
+Copying blob sha256:5b6b46f31018cc1b533427832cffa833c7fe543a481fbb2a27eda74f8e9d37d8
+Copying blob sha256:e6338cb596e5ce58d0a41af85821eb42f75045b355f31a139b7778e61af86717
+Copying blob sha256:077890f7cb5fcaa6b1ad5483c48ab0ae8c9e6c5c32c13e06dc7a102669c7ee44
+Copying blob sha256:2c08f8fc35457eaa49b1face4be6a6902e232ccc24d46f5520d288299525915a
+Copying blob sha256:a95550892f9570a36c7df3550e0dd577e76a44b2c5429dd85aeb8a9d03f6afc5
+Copying blob sha256:eee77a1bac927057c5f5268ef68fda6459ba134ae9243a28117f80dfe21f7c5b
+Copying config sha256:f2a4b34efcc33b86c80e373434cec60e545388a86f602a5f06cb48d84ee4717d
+Writing manifest to image destination
+Storing signatures
+--> f2a4b34efcc
+f2a4b34efcc33b86c80e373434cec60e545388a86f602a5f06cb48d84ee4717d
+
+Pushing image image-registry.openshift-image-registry.svc:5000/steve-hillyer-probes/probes:latest ...
+Getting image source signatures
+Copying blob sha256:eee77a1bac927057c5f5268ef68fda6459ba134ae9243a28117f80dfe21f7c5b
+Copying blob sha256:1f209e06e85d1c9a1b44b7a5b87360d7976245957624fcb9eededb7b5a8a0651
+Copying blob sha256:a8d8a88bbf1f0800d17bbd5bf3d3d8de6d755ccabfd019abf042f9f1b6c88d19
+Copying blob sha256:15038f2f96bce3594a690ae501b9a380434face93ca0940d6a34ef5020f311f9
+Copying blob sha256:1255769d9dc0e834961b135c84a9e76c70b55c7176f8982192e579916737f7f4
+Copying blob sha256:0a2284aba01f1b65e6cf64dad35426b5c36d18c12a9006d958a134cec6fe8e9c
+Successfully pushed image-registry.openshift-image-registry.svc:5000/steve-hillyer-probes/probes:latest
+Warning: Push failed, retrying in 5s ...
+Getting image source signatures
+Copying blob sha256:eee77a1bac927057c5f5268ef68fda6459ba134ae9243a28117f80dfe21f7c5b
+Copying blob sha256:0a2284aba01f1b65e6cf64dad35426b5c36d18c12a9006d958a134cec6fe8e9c
+Copying blob sha256:1255769d9dc0e834961b135c84a9e76c70b55c7176f8982192e579916737f7f4
+Copying blob sha256:1f209e06e85d1c9a1b44b7a5b87360d7976245957624fcb9eededb7b5a8a0651
+Copying blob sha256:a8d8a88bbf1f0800d17bbd5bf3d3d8de6d755ccabfd019abf042f9f1b6c88d19
+Copying blob sha256:15038f2f96bce3594a690ae501b9a380434face93ca0940d6a34ef5020f311f9
+Successfully pushed image-registry.openshift-image-registry.svc:5000/steve-hillyer-probes/probes:latest
+Warning: Push failed, retrying in 5s ...
+Getting image source signatures
+Copying blob sha256:eee77a1bac927057c5f5268ef68fda6459ba134ae9243a28117f80dfe21f7c5b
+Copying blob sha256:a8d8a88bbf1f0800d17bbd5bf3d3d8de6d755ccabfd019abf042f9f1b6c88d19
+Copying blob sha256:15038f2f96bce3594a690ae501b9a380434face93ca0940d6a34ef5020f311f9
+Copying blob sha256:0a2284aba01f1b65e6cf64dad35426b5c36d18c12a9006d958a134cec6fe8e9c
+Copying blob sha256:1f209e06e85d1c9a1b44b7a5b87360d7976245957624fcb9eededb7b5a8a0651
+Copying blob sha256:1255769d9dc0e834961b135c84a9e76c70b55c7176f8982192e579916737f7f4
+Successfully pushed image-registry.openshift-image-registry.svc:5000/steve-hillyer-probes/probes:latest
+Warning: Push failed, retrying in 5s ...
+Registry server Address: 
+Registry server User Name: serviceaccount
+Registry server Email: serviceaccount@example.org
+Registry server Password: <<non-empty>>
+error: build error: Failed to push image: error copying layers and metadata from "containers-storage:[overlay@/var/lib/containers/storage+/var/run/containers/storage:overlay.imagestore=/var/lib/shared]image-registry.openshift-image-registry.svc:5000/steve-hillyer-probes/probes:latest" to "docker://image-registry.openshift-image-registry.svc:5000/steve-hillyer-probes/probes:latest": Error writing blob: Error initiating layer upload to /v2/steve-hillyer-probes/probes/blobs/uploads/ in image-registry.openshift-image-registry.svc:5000: received unexpected HTTP status: 500 Internal Server Error
